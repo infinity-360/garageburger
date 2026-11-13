@@ -49,6 +49,9 @@ nav.main a:hover{opacity:1;color:var(--y)}
 .btn-y{background:var(--y);color:var(--k);box-shadow:0 8px 24px rgba(255,210,31,.3)}
 .btn-y:hover{box-shadow:0 12px 30px rgba(255,210,31,.45)}
 .btn-wa{background:#25D366;color:#fff;box-shadow:0 8px 24px rgba(37,211,102,.3)}
+.btn-if{background:#EA1D2C;color:#fff;box-shadow:0 8px 24px rgba(234,29,44,.3)}
+.btn-if:hover{box-shadow:0 12px 30px rgba(234,29,44,.45)}
+.ifl{font-family:Poppins;font-weight:800;letter-spacing:-.5px;font-style:italic}
 .btn-o{border:2px solid rgba(255,255,255,.7);color:#fff}
 .btn-o:hover{border-color:var(--y);color:var(--y)}
 .btn-sm{padding:10px 18px;font-size:13px}
@@ -189,6 +192,19 @@ section{position:relative}
 .df .btn{width:100%}
 .df .alt{display:block;text-align:center;margin-top:12px;font-size:13px;color:#cfc8bd;text-decoration:underline}
 
+/* almoço */
+.lunch{background:var(--cream);color:var(--k);overflow:hidden}
+.lunch .lead{color:#4a453e}
+.lunch-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:center}
+.plates{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.plates img{border-radius:20px;aspect-ratio:3/4;object-fit:cover;width:100%;box-shadow:0 20px 40px rgba(0,0,0,.18)}
+.plates img:nth-child(2){transform:translateY(34px)}
+.xp{display:inline-flex;align-items:center;gap:10px;background:var(--k);color:var(--y);font-family:Anton;text-transform:uppercase;letter-spacing:1px;padding:8px 16px;border-radius:999px;font-size:15px;margin-top:18px}
+.lunch .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.lunch .btn-o{border-color:var(--k);color:var(--k)}
+@media (max-width:1000px){.lunch-grid{grid-template-columns:1fr}}
+@media (max-width:560px){.plates{gap:8px}.plates img{border-radius:14px}.plates img:nth-child(2){transform:translateY(18px)}}
+
 /* video section */
 .vid{background:linear-gradient(180deg,#111 0%,#1a1406 100%);overflow:hidden}
 .vid-grid{display:grid;grid-template-columns:1fr auto;gap:70px;align-items:center}
@@ -311,6 +327,7 @@ footer .cred a{color:var(--y);font-weight:600}
   <nav class="main">
     <a href="#sobre">A casa</a>
     <a href="#cardapio">Cardápio</a>
+    <a href="#almoco">Almoço</a>
     <a href="#video">Na brasa</a>
     <a href="#galeria">Galeria</a>
     <a href="#tour">Tour 360°</a>
@@ -324,8 +341,9 @@ footer .cred a{color:var(--y);font-weight:600}
 </header>
 <div class="mnav" id="mnav">
   <button class="x" aria-label="Fechar menu" id="mclose">×</button>
-  <a href="#sobre">A casa</a><a href="#cardapio">Cardápio</a><a href="#video">Na brasa</a><a href="#galeria">Galeria</a><a href="#tour">Tour 360°</a><a href="#contato">Contato</a>
+  <a href="#sobre">A casa</a><a href="#cardapio">Cardápio</a><a href="#almoco">Almoço</a><a href="#video">Na brasa</a><a href="#galeria">Galeria</a><a href="#tour">Tour 360°</a><a href="#contato">Contato</a>
   <a class="btn btn-y" style="font-family:Poppins;font-size:16px;text-transform:none" href="https://garageburgerapucarana.saipos.com/home" target="_blank" rel="noopener">Abrir cardápio online</a>
+  <a class="btn btn-if" style="font-family:Poppins;font-size:16px;text-transform:none" href="https://www.ifood.com.br/delivery/apucarana-pr/garage-burger-jardim-sao-pedro/f3eac6ee-d7c6-4614-9b2d-e796df9592e4" target="_blank" rel="noopener">Pedir no iFood</a>
 </div>
 
 <!-- ===== HERO SCROLL ===== -->
@@ -352,9 +370,10 @@ footer .cred a{color:var(--y);font-weight:600}
       <h1 class="disp">Garage Burger <span class="script">Apucarana</span></h1>
       <div class="ctas">
         <a class="btn btn-y" href="#cardapio">Ver cardápio e pedir</a>
+        <a class="btn btn-if" href="https://www.ifood.com.br/delivery/apucarana-pr/garage-burger-jardim-sao-pedro/f3eac6ee-d7c6-4614-9b2d-e796df9592e4" target="_blank" rel="noopener">Pedir no <span class="ifl">iFood</span></a>
         <a class="btn btn-wa" href="https://wa.me/5543996008752?text=Ol%C3%A1%2C%20Garage%20Burger!%20Vim%20pelo%20site%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.4-1.5-5.2C2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8M20.4 3.6C18.2 1.3 15.2 0 12 0 5.5 0 .2 5.3.2 11.8c0 2.1.5 4.1 1.6 5.9L.1 24l6.4-1.7c1.7.9 3.6 1.4 5.6 1.4 6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.3"/></svg>Pedir no WhatsApp</a>
       </div>
-      <div class="meta"><span><b>★ 4,9</b> no Google</span><span>Entrega e retirada</span><span>Ter a Dom • 11h–14h e 18h–23h</span></div>
+      <div class="meta"><span><b>★ 4,9</b> no Google</span><span>Entrega, retirada e iFood</span><span>Ter a Dom • 11h–14h e 18h–23h</span></div>
     </div>
     <div class="progress" id="prog"></div>
   </div>
@@ -398,16 +417,40 @@ footer .cred a{color:var(--y);font-weight:600}
       <div>
         <span class="kicker">Cardápio</span>
         <h2 class="disp h2">Escolha, <span class="script">monte e peça</span></h2>
-        <p class="lead">Adicione os itens e envie o pedido pronto pelo WhatsApp — ou, se preferir, finalize direto no nosso cardápio online.</p>
+        <p class="lead">Adicione os itens e envie o pedido pronto pelo WhatsApp — ou, se preferir, peça pelo nosso cardápio online ou pelo iFood.</p>
       </div>
       <div class="order-opts">
         <a class="btn btn-y" href="https://garageburgerapucarana.saipos.com/home" target="_blank" rel="noopener">Pedir no cardápio online ↗</a>
+        <a class="btn btn-if" href="https://www.ifood.com.br/delivery/apucarana-pr/garage-burger-jardim-sao-pedro/f3eac6ee-d7c6-4614-9b2d-e796df9592e4" target="_blank" rel="noopener">Pedir no <span class="ifl">iFood</span></a>
         <a class="btn btn-wa" href="https://wa.me/5543996008752?text=Ol%C3%A1%2C%20Garage%20Burger!%20Vim%20pelo%20site%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
     <div class="tabs" id="tabs"></div>
     <div id="menuRoot"></div>
     <p class="note">Preços conforme o cardápio online da Garage Burger e sujeitos a alteração. Itens marcados com “a partir de” têm opções de tamanho/quantidade — a gente confirma com você no WhatsApp. Taxa de entrega calculada no fechamento do pedido.</p>
+  </div>
+</section>
+<div class="check sm"></div>
+
+<!-- ===== ALMOÇO ===== -->
+<section class="lunch sec" id="almoco">
+  <div class="wrap lunch-grid">
+    <div class="reveal">
+      <span class="kicker" style="color:#b88a00">Almoço</span>
+      <h2 class="disp h2">Hora do almoço <span class="script" style="color:#d9a400">é na Garage</span></h2>
+      <p class="lead">Além dos burgers, a Garage também serve almoço: pratos feitos com arroz soltinho, feijão, farofa, couve e acompanhamentos caprichados — pra comer no salão ou receber em casa.</p>
+      <span class="xp">⚡ Garage Burger Express</span>
+      <p class="lead" style="margin-top:12px">Os pedidos de almoço por delivery são feitos pela loja Garage Burger Express no iFood.</p>
+      <div class="ctas">
+        <a class="btn btn-if" href="https://www.ifood.com.br/delivery/apucarana-pr/garage-burger-express-jardim-sao-pedro/6c5f932b-37d1-49dc-a9fe-45edcdfe967c" target="_blank" rel="noopener">Pedir almoço no <span class="ifl">iFood</span></a>
+        <a class="btn btn-o" href="https://wa.me/5543996008752?text=Ol%C3%A1!%20Gostaria%20de%20saber%20o%20card%C3%A1pio%20do%20almo%C3%A7o%20de%20hoje." target="_blank" rel="noopener">Cardápio do dia no WhatsApp</a>
+      </div>
+    </div>
+    <div class="plates reveal">
+      <img src="almoco1.jpg" alt="Prato de almoço com arroz, farofa, couve e vinagrete" loading="lazy">
+      <img src="almoco2.jpg" alt="Almoço com feijão, arroz, couve e torresmo" loading="lazy">
+      <img src="almoco3.jpg" alt="Costela ao molho barbecue com arroz e batatas" loading="lazy">
+    </div>
   </div>
 </section>
 <div class="check sm"></div>
@@ -516,6 +559,7 @@ footer .cred a{color:var(--y);font-weight:600}
           <a href="https://www.google.com/maps?cid=10579655888230539246" target="_blank" rel="noopener"><span class="ic">📍</span><span><b>Endereço</b>R. Profa. Talita Bresolin, 1067 — Jardim São Pedro, Apucarana-PR, 86802-390</span></a>
           <a href="https://wa.me/5543996008752" target="_blank" rel="noopener"><span class="ic">💬</span><span><b>WhatsApp</b>(43) 99600-8752</span></a>
           <div><span class="ic">🛵</span><span><b>Atendimento</b>Salão, retirada e entrega</span></div>
+          <a href="https://www.ifood.com.br/delivery/apucarana-pr/garage-burger-jardim-sao-pedro/f3eac6ee-d7c6-4614-9b2d-e796df9592e4" target="_blank" rel="noopener"><span class="ic" style="background:#EA1D2C;color:#fff">🍔</span><span><b>iFood</b>Garage Burger • Garage Burger Express (almoço)</span></a>
         </div>
         <div class="ctas">
           <a class="btn btn-y" href="https://www.google.com/maps/dir/?api=1&destination=GarageBurger%2C%20R.%20Profa.%20Talita%20Bresolin%2C%201067%2C%20Apucarana%20-%20PR" target="_blank" rel="noopener">Como chegar</a>
@@ -536,6 +580,8 @@ footer .cred a{color:var(--y);font-weight:600}
     <a href="https://www.instagram.com/garageburgerapucarana/" target="_blank" rel="noopener">Instagram</a>
     <a href="https://wa.me/5543996008752" target="_blank" rel="noopener">WhatsApp</a>
     <a href="https://garageburgerapucarana.saipos.com/home" target="_blank" rel="noopener">Cardápio online</a>
+    <a href="https://www.ifood.com.br/delivery/apucarana-pr/garage-burger-jardim-sao-pedro/f3eac6ee-d7c6-4614-9b2d-e796df9592e4" target="_blank" rel="noopener">iFood</a>
+    <a href="https://www.ifood.com.br/delivery/apucarana-pr/garage-burger-express-jardim-sao-pedro/6c5f932b-37d1-49dc-a9fe-45edcdfe967c" target="_blank" rel="noopener">iFood Express</a>
   </div>
   <div>© <span id="yr"></span> Garage Burger. Todos os direitos reservados.</div>
   <div class="cred">Site e tour virtual 360° por <a href="https://infinity-360.github.io/360view/" target="_blank" rel="noopener">Infinity View 360</a></div>
@@ -564,6 +610,7 @@ footer .cred a{color:var(--y);font-weight:600}
     <small>Taxa de entrega e itens “a partir de” confirmados pela loja no WhatsApp.</small>
     <button class="btn btn-wa" id="sendWa">Enviar pedido pelo WhatsApp</button>
     <a class="alt" href="https://garageburgerapucarana.saipos.com/home" target="_blank" rel="noopener">Prefere finalizar no cardápio online? Clique aqui</a>
+    <a class="alt" href="https://www.ifood.com.br/delivery/apucarana-pr/garage-burger-jardim-sao-pedro/f3eac6ee-d7c6-4614-9b2d-e796df9592e4" target="_blank" rel="noopener">Ou peça pelo iFood</a>
   </div>
 </aside>
 <div class="lb" id="lb"><img alt=""></div>
