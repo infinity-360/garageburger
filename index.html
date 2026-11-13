@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Garage Burger Apucarana | Hambúrguer artesanal na churrasqueira</title>
+<meta name="description" content="Garage Burger em Apucarana-PR: hambúrgueres artesanais de 160g grelhados na churrasqueira, porções, milk-shakes e bebidas. Peça pelo cardápio online ou pelo WhatsApp. Entrega e retirada.">
+<meta name="theme-color" content="#111111">
+<meta property="og:title" content="Garage Burger Apucarana">
+<meta property="og:description" content="Hambúrguer artesanal na churrasqueira. Peça pelo cardápio online ou pelo WhatsApp.">
+<meta property="og:image" content="g1.jpg">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700;800&family=Yellowtail&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+<link rel="preload" as="image" href="hero0.jpg">
+<style>
+:root{
+  --y:#FFD21F; --y2:#F5B800; --k:#111; --k2:#1b1b1b; --k3:#262626;
+  --cream:#F4EBDC; --w:#fff; --mut:#a9a39a; --red:#E0352B;
+  --rad:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:Poppins,system-ui,sans-serif;background:var(--k);color:var(--w);overflow-x:hidden;line-height:1.55}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.wrap{width:min(1180px,92vw);margin:0 auto}
+.disp{font-family:Anton,Impact,sans-serif;text-transform:uppercase;letter-spacing:.5px;line-height:1.02;font-weight:400}
+.script{font-family:Yellowtail,cursive;text-transform:none;letter-spacing:0;color:var(--y)}
+.check{height:22px;background:conic-gradient(var(--k) 25%,var(--y) 0 50%,var(--k) 0 75%,var(--y) 0) 0 0/22px 22px}
+.check.sm{height:12px;background-size:12px 12px}
+
+/* ===== header ===== */
+header{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:12px 4vw;transition:background .35s,box-shadow .35s,padding .35s}
+header.solid{background:rgba(17,17,17,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 6px 24px rgba(0,0,0,.35);padding:8px 4vw}
+.hlogo{display:flex;align-items:center;gap:10px;opacity:0;transform:translateY(-8px);transition:.4s}
+header.show-logo .hlogo{opacity:1;transform:none}
+.hlogo img{width:52px;height:52px;object-fit:contain}
+.hlogo span{font-family:Anton;font-size:18px;letter-spacing:1px}
+nav.main{display:flex;gap:26px;font-weight:600;font-size:14px}
+nav.main a{opacity:.85;transition:.2s;position:relative}
+nav.main a:hover{opacity:1;color:var(--y)}
+.hbtns{display:flex;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 24px;border-radius:999px;font-weight:700;font-size:15px;transition:transform .2s,box-shadow .2s,background .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn-y{background:var(--y);color:var(--k);box-shadow:0 8px 24px rgba(255,210,31,.3)}
+.btn-y:hover{box-shadow:0 12px 30px rgba(255,210,31,.45)}
+.btn-wa{background:#25D366;color:#fff;box-shadow:0 8px 24px rgba(37,211,102,.3)}
+.btn-o{border:2px solid rgba(255,255,255,.7);color:#fff}
+.btn-o:hover{border-color:var(--y);color:var(--y)}
+.btn-sm{padding:10px 18px;font-size:13px}
+.btn svg{width:19px;height:19px;flex:none}
+.burger-menu{display:none;width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.08);align-items:center;justify-content:center}
+.burger-menu span,.burger-menu span:before,.burger-menu span:after{display:block;width:20px;height:2px;background:#fff;position:relative;border-radius:2px}
+.burger-menu span:before,.burger-menu span:after{content:"";position:absolute;left:0}
+.burger-menu span:before{top:-6px}.burger-menu span:after{top:6px}
+.mnav{position:fixed;inset:0;z-index:60;background:rgba(10,10,10,.97);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;opacity:0;pointer-events:none;transition:.3s}
+.mnav.open{opacity:1;pointer-events:auto}
+.mnav a{font-family:Anton;font-size:34px;text-transform:uppercase}
+.mnav .x{position:absolute;top:18px;right:20px;font-size:34px}
+
+/* ===== hero scroll ===== */
+#hero{position:relative;height:420vh}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#0b0b0b}
+#bgc{position:absolute;inset:-40px;width:calc(100% + 80px);height:calc(100% + 80px);filter:blur(28px) brightness(.55) saturate(1.2);transform:scale(1.05)}
+#fc{position:absolute;inset:0;width:100%;height:100%}
+.shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,0) 28%,rgba(0,0,0,0) 55%,rgba(0,0,0,.85) 100%);pointer-events:none}
+.hero-logo{position:absolute;left:50%;top:50%;width:min(46vh,62vw);transform:translate(-50%,-50%);filter:drop-shadow(0 18px 40px rgba(0,0,0,.6));will-change:transform,opacity;pointer-events:none}
+.hero-intro{position:absolute;left:0;right:0;bottom:9vh;text-align:center;padding:0 6vw;will-change:opacity,transform}
+.hero-intro p{font-weight:600;letter-spacing:3px;text-transform:uppercase;font-size:13px;opacity:.9}
+.hero-intro .scroll-hint{margin:16px auto 0;width:26px;height:42px;border:2px solid rgba(255,255,255,.7);border-radius:16px;position:relative}
+.hero-intro .scroll-hint:after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;border-radius:2px;background:var(--y);transform:translateX(-50%);animation:sh 1.6s infinite}
+@keyframes sh{0%{opacity:0;transform:translate(-50%,0)}40%{opacity:1}100%{opacity:0;transform:translate(-50%,14px)}}
+.hero-mid{position:absolute;left:6vw;top:50%;transform:translateY(-50%);max-width:420px;opacity:0;will-change:opacity,transform}
+.hero-mid,.hero-end,.hero-intro{text-shadow:0 2px 18px rgba(0,0,0,.75),0 1px 3px rgba(0,0,0,.6)}
+.hero-mid h2{font-size:clamp(38px,5vw,66px)}
+.hero-mid h2 .script{font-size:1.05em;display:block;margin-top:-4px}
+.hero-mid p{margin-top:14px;color:#e8e2d8;font-size:16px}
+.hero-mid.r{left:auto;right:6vw;text-align:right}
+.hero-end{position:absolute;left:0;right:0;bottom:8vh;text-align:center;padding:0 6vw;opacity:0;will-change:opacity,transform}
+.hero-end h1{font-size:clamp(40px,7vw,96px)}
+.hero-end h1 .script{display:block;font-size:.8em;margin-top:2px}
+.hero-end .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.hero-end .meta{margin-top:16px;font-size:13px;color:#ddd;display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+.hero-end .meta b{color:var(--y)}
+.progress{position:absolute;left:0;bottom:0;height:4px;background:var(--y);width:0}
+
+/* ===== marquee ===== */
+.marq{background:var(--y);color:var(--k);overflow:hidden;white-space:nowrap;padding:14px 0}
+.marq .t{display:inline-flex;gap:40px;animation:mq 28s linear infinite;font-family:Anton;text-transform:uppercase;font-size:22px;letter-spacing:1px}
+.marq .t span:after{content:"✦";margin-left:40px;font-size:16px;vertical-align:middle}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ===== sections ===== */
+section{position:relative}
+.sec{padding:110px 0}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--y)}
+.kicker:before{content:"";width:28px;height:3px;background:var(--y);border-radius:2px}
+.h2{font-size:clamp(40px,5.4vw,72px);margin-top:10px}
+.lead{color:#cfc8bd;font-size:17px;max-width:620px;margin-top:14px}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* about */
+.about{background:var(--cream);color:var(--k)}
+.about .lead{color:#4a453e}
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.posters{position:relative;height:620px}
+.posters img{position:absolute;border-radius:22px;box-shadow:0 30px 60px rgba(0,0,0,.35);object-fit:cover}
+.posters .p1{width:62%;left:0;top:0;transform:rotate(-4deg)}
+.posters .p2{width:60%;right:0;bottom:0;transform:rotate(4deg)}
+.stamp{position:absolute;right:6%;top:4%;width:118px;height:118px;border-radius:50%;background:var(--k);color:var(--y);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:Anton;transform:rotate(10deg);box-shadow:0 12px 30px rgba(0,0,0,.4);z-index:3;text-align:center;line-height:1}
+.stamp b{font-size:38px}.stamp small{font-family:Poppins;font-size:10px;font-weight:700;letter-spacing:1px;color:#fff;margin-top:4px}
+.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.feat{background:#fff;border-radius:var(--rad);padding:22px 18px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+.feat i{display:flex;width:48px;height:48px;border-radius:14px;background:var(--y);align-items:center;justify-content:center;font-style:normal;font-size:24px}
+.feat h4{font-size:16px;margin-top:12px;line-height:1.25}
+.feat p{font-size:13.5px;color:#6a645b;margin-top:6px}
+.about .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.about .btn-o{border-color:var(--k);color:var(--k)}
+
+/* menu */
+.menu{background:var(--k)}
+.menu-top{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.order-opts{display:flex;gap:10px;flex-wrap:wrap}
+.tabs{position:sticky;top:68px;z-index:20;margin-top:36px;display:flex;gap:8px;overflow-x:auto;padding:12px 0;background:var(--k);scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:11px 20px;border-radius:999px;background:var(--k3);font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;transition:.2s}
+.tab.on{background:var(--y);color:var(--k)}
+.cat{padding-top:30px}
+.cat h3{font-size:34px;display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.cat h3:after{content:"";flex:1;height:2px;background:linear-gradient(90deg,var(--k3),transparent)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.item{background:var(--k2);border:1px solid #2a2a2a;border-radius:var(--rad);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,border-color .25s}
+.item:hover{transform:translateY(-4px);border-color:#4a4220}
+.item .ph{aspect-ratio:4/3;background:#1f1f1f url(logo.png) center/34% no-repeat;position:relative;overflow:hidden}
+.item .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.item:hover .ph img{transform:scale(1.06)}
+.item.drink .ph{aspect-ratio:auto;height:150px;background-color:#f6f3ee}
+.item.drink .ph img{object-fit:contain;padding:14px}
+.item .bd{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.item h4{font-size:17px;line-height:1.25}
+.item p{font-size:13.2px;color:var(--mut);margin-top:6px;flex:1}
+.item .ft{display:flex;align-items:center;justify-content:space-between;margin-top:14px;gap:10px}
+.price{font-weight:800;font-size:18px;color:var(--y)}
+.price small{display:block;font-size:10.5px;color:var(--mut);font-weight:600;letter-spacing:.5px;text-transform:uppercase}
+.add{display:flex;align-items:center;gap:6px;background:var(--y);color:var(--k);font-weight:800;font-size:13px;padding:10px 14px;border-radius:12px}
+.qty{display:flex;align-items:center;gap:4px;background:var(--k3);border-radius:12px;padding:4px}
+.qty button{width:32px;height:32px;border-radius:9px;background:var(--y);color:var(--k);font-weight:800;font-size:18px;line-height:1}
+.qty span{min-width:24px;text-align:center;font-weight:800}
+.mini-list .item{flex-direction:row;align-items:center}
+.mini-list .item .bd{padding:14px 16px}
+.mini-list .ph{display:none}
+.mini-list .item .ft{margin-top:6px}
+.grid.cols4{grid-template-columns:repeat(4,1fr)}
+.note{font-size:12.5px;color:var(--mut);margin-top:26px}
+
+/* cart */
+.cart-fab{position:fixed;right:20px;bottom:20px;z-index:45;display:flex;align-items:center;gap:10px;background:var(--y);color:var(--k);font-weight:800;padding:14px 20px;border-radius:999px;box-shadow:0 14px 34px rgba(0,0,0,.45);transform:translateY(140%);transition:transform .35s cubic-bezier(.2,.9,.3,1.3)}
+.cart-fab.show{transform:none}
+.cart-fab .n{background:var(--k);color:var(--y);border-radius:999px;min-width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:13px;padding:0 6px}
+.wa-fab{position:fixed;left:20px;bottom:20px;z-index:44;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(0,0,0,.4)}
+.wa-fab svg{width:30px;height:30px}
+.drawer-bg{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:70;opacity:0;pointer-events:none;transition:.3s}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:#151515;z-index:71;transform:translateX(100%);transition:transform .38s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column}
+.cart-open .drawer{transform:none}.cart-open .drawer-bg{opacity:1;pointer-events:auto}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:20px 22px;border-bottom:1px solid #2a2a2a}
+.dh h3{font-family:Anton;font-size:26px;text-transform:uppercase}
+.dh button{font-size:30px;line-height:1}
+.db{flex:1;overflow-y:auto;padding:16px 22px}
+.cl{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-bottom:1px dashed #2e2e2e}
+.cl .nm{font-weight:600;font-size:14px;line-height:1.3}
+.cl .nm small{display:block;color:var(--mut);font-weight:500}
+.empty{color:var(--mut);text-align:center;padding:40px 0}
+.form{margin-top:18px;display:grid;gap:10px}
+.form label{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#cfc8bd}
+.form input,.form select,.form textarea{width:100%;background:#202020;border:1px solid #333;border-radius:12px;color:#fff;padding:12px 14px;font:inherit;font-size:14px}
+.form textarea{min-height:64px;resize:vertical}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.seg button{padding:11px;border-radius:12px;background:#202020;border:1px solid #333;font-weight:700;font-size:13px}
+.seg button.on{background:var(--y);color:var(--k);border-color:var(--y)}
+.df{padding:16px 22px 22px;border-top:1px solid #2a2a2a;background:#121212}
+.tot{display:flex;justify-content:space-between;font-weight:800;font-size:18px;margin-bottom:4px}
+.tot span:last-child{color:var(--y)}
+.df small{display:block;color:var(--mut);font-size:12px;margin-bottom:14px}
+.df .btn{width:100%}
+.df .alt{display:block;text-align:center;margin-top:12px;font-size:13px;color:#cfc8bd;text-decoration:underline}
+
+/* video section */
+.vid{background:linear-gradient(180deg,#111 0%,#1a1406 100%);overflow:hidden}
+.vid-grid{display:grid;grid-template-columns:1fr auto;gap:70px;align-items:center}
+.phone{position:relative;width:min(380px,82vw);aspect-ratio:9/16;border-radius:34px;overflow:hidden;border:6px solid #222;box-shadow:0 40px 90px rgba(0,0,0,.6),0 0 0 2px #3a3214;background:#000}
+.phone video{width:100%;height:100%;object-fit:cover}
+.snd{position:absolute;right:14px;bottom:14px;width:46px;height:46px;border-radius:50%;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;font-size:20px}
+.glow{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(255,210,31,.25),transparent 65%);right:-120px;top:50%;transform:translateY(-50%);pointer-events:none}
+.ticks{display:grid;gap:14px;margin-top:28px}
+.ticks div{display:flex;gap:14px;align-items:flex-start}
+.ticks b{flex:none;width:34px;height:34px;border-radius:10px;background:var(--y);color:var(--k);display:flex;align-items:center;justify-content:center;font-family:Anton;font-size:16px}
+.ticks p{color:#d6cfc4;font-size:15px}
+.ticks p strong{color:#fff;display:block}
+
+/* gallery */
+.gal{background:var(--k)}
+.masonry{columns:4 240px;column-gap:14px;margin-top:40px}
+.masonry a{display:block;margin-bottom:14px;border-radius:16px;overflow:hidden;break-inside:avoid;position:relative}
+.masonry img{width:100%;transition:transform .6s}
+.masonry a:hover img{transform:scale(1.06)}
+.ig{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px}
+
+/* family */
+.fam{background:var(--y);color:var(--k);overflow:hidden}
+.fam-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.fam .lead{color:#3a3320}
+.fam .kicker{color:var(--k)}.fam .kicker:before{background:var(--k)}
+.fam .imgs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fam .imgs img{border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,.25);aspect-ratio:4/5;object-fit:cover;width:100%}
+.fam .imgs img:last-child{margin-top:40px}
+.fam .script{color:var(--k)}
+
+/* tour */
+.tour{background:#0d0d0d}
+.pano-wrap{position:relative;margin-top:40px;border-radius:24px;overflow:hidden;border:1px solid #2a2a2a;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+#pano{width:100%;height:min(70vh,620px);background:#111}
+.badge{position:absolute;left:18px;top:18px;z-index:5;background:rgba(17,17,17,.82);backdrop-filter:blur(8px);border:1px solid rgba(255,210,31,.5);color:var(--y);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:9px 14px;border-radius:999px}
+.tour-note{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-top:18px;color:var(--mut);font-size:14px}
+
+/* contact */
+.contact{background:var(--cream);color:var(--k)}
+.ct-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;margin-top:40px}
+.card{background:#fff;border-radius:22px;padding:30px;box-shadow:0 14px 40px rgba(0,0,0,.07)}
+.hrs{margin-top:8px}
+.hrs div{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed #e2d9c8;font-size:14.5px}
+.hrs div.today{font-weight:800}
+.hrs div.today span:first-child:after{content:" • hoje";color:#c79300;font-size:12px}
+.hrs .off{color:#a19a8f}
+.status{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:13px;padding:8px 14px;border-radius:999px;background:#f1ece2;margin-bottom:10px}
+.status i{width:9px;height:9px;border-radius:50%;background:#bbb}
+.status.open i{background:#1fbf5b;box-shadow:0 0 0 4px rgba(31,191,91,.2)}
+.info{display:grid;gap:16px;margin-top:22px}
+.info a,.info div{display:flex;gap:14px;align-items:flex-start;font-size:15px}
+.info b{display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#8a8275}
+.info .ic{flex:none;width:42px;height:42px;border-radius:12px;background:var(--y);display:flex;align-items:center;justify-content:center;font-size:19px}
+.map{border-radius:22px;overflow:hidden;min-height:420px;box-shadow:0 14px 40px rgba(0,0,0,.1)}
+.map iframe{width:100%;height:100%;min-height:420px;border:0;display:block}
+.contact .ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+
+footer{background:#0a0a0a;padding:50px 0 110px;text-align:center;color:#8d867b;font-size:13px}
+footer img{width:90px;margin:0 auto 14px}
+footer .soc{display:flex;gap:18px;justify-content:center;margin:16px 0;font-weight:600;color:#ddd}
+footer .cred{margin-top:18px}
+footer .cred a{color:var(--y);font-weight:600}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:80;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.3s;padding:4vw}
+.lb.open{opacity:1;pointer-events:auto}
+.lb img{max-height:88vh;border-radius:16px}
+
+.toast{position:fixed;left:50%;bottom:92px;transform:translate(-50%,30px);background:#fff;color:var(--k);font-weight:700;font-size:14px;padding:12px 20px;border-radius:999px;z-index:90;opacity:0;transition:.3s;pointer-events:none;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media (max-width:1000px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .grid.cols4{grid-template-columns:repeat(2,1fr)}
+  .about-grid,.vid-grid,.fam-grid,.ct-grid{grid-template-columns:1fr}
+  .vid-grid{gap:40px}.vid-grid .phone{margin:0 auto}
+  .posters{height:520px;max-width:520px;margin:0 auto;width:100%}
+}
+@media (max-width:820px){
+  nav.main,.hbtns .btn-o{display:none}
+  .burger-menu{display:flex}
+  .sec{padding:80px 0}
+  .feats{grid-template-columns:1fr}
+  .hero-mid{left:6vw;right:6vw;max-width:none;top:auto;bottom:16vh;transform:none;text-align:left}
+  .hero-mid.r{text-align:left;right:6vw}
+  .hero-mid h2{font-size:42px}
+  .shade{background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,0) 25%,rgba(0,0,0,.15) 45%,rgba(0,0,0,.88) 100%)}
+  .hero-logo{width:min(72vw,40vh)}
+  .tabs{top:62px}
+  .hlogo img{width:44px;height:44px}
+  .hlogo span{display:none}
+}
+@media (max-width:560px){
+  .grid,.grid.cols4{grid-template-columns:1fr}
+  .grid:not(.mini-list) .item{flex-direction:row}
+  .grid:not(.mini-list) .item .ph{width:118px;flex:none;aspect-ratio:auto}
+  .grid:not(.mini-list) .item.drink .ph{height:auto}
+  .item h4{font-size:15.5px}
+  .item p{font-size:12.5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .item .bd{padding:12px 14px}
+  .add{padding:9px 12px;font-size:12px}
+  .price{font-size:16px}
+  .posters{height:440px}
+  .stamp{width:96px;height:96px}.stamp b{font-size:30px}
+  .hero-end .btn{padding:13px 20px;font-size:14px}
+  .hbtns .btn-y{padding:9px 14px;font-size:12.5px}
+  .masonry{columns:2 140px;column-gap:10px}.masonry a{margin-bottom:10px}
+  .card{padding:22px}
+  .cart-fab{right:12px;bottom:14px}
+  .wa-fab{left:12px;bottom:14px;width:54px;height:54px}
+}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.marq .t{animation:none}}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="#topo" class="hlogo"><img src="logo.png" alt="Garage Burger"><span>GARAGE BURGER</span></a>
+  <nav class="main">
+    <a href="#sobre">A casa</a>
+    <a href="#cardapio">Cardápio</a>
+    <a href="#video">Na brasa</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#tour">Tour 360°</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <div class="hbtns">
+    <a class="btn btn-o btn-sm" href="https://garageburgerapucarana.saipos.com/home" target="_blank" rel="noopener">Cardápio online</a>
+    <a class="btn btn-y btn-sm" href="#cardapio">Peça agora</a>
+    <button class="burger-menu" aria-label="Abrir menu" id="mbtn"><span></span></button>
+  </div>
+</header>
+<div class="mnav" id="mnav">
+  <button class="x" aria-label="Fechar menu" id="mclose">×</button>
+  <a href="#sobre">A casa</a><a href="#cardapio">Cardápio</a><a href="#video">Na brasa</a><a href="#galeria">Galeria</a><a href="#tour">Tour 360°</a><a href="#contato">Contato</a>
+  <a class="btn btn-y" style="font-family:Poppins;font-size:16px;text-transform:none" href="https://garageburgerapucarana.saipos.com/home" target="_blank" rel="noopener">Abrir cardápio online</a>
+</div>
+
+<!-- ===== HERO SCROLL ===== -->
+<section id="hero">
+  <a id="topo"></a>
+  <div class="stage">
+    <canvas id="bgc" width="45" height="80"></canvas>
+    <canvas id="fc"></canvas>
+    <div class="shade"></div>
+    <img class="hero-logo" id="hlogo" src="logo.png" alt="Garage Burger Apucarana">
+    <div class="hero-intro" id="hintro">
+      <p>Hambúrguer artesanal • Apucarana-PR</p>
+      <div class="scroll-hint" aria-hidden="true"></div>
+    </div>
+    <div class="hero-mid" id="hmid1">
+      <h2 class="disp">Bem-vindo à <span class="script">nossa garagem</span></h2>
+      <p>Burger de 160g grelhado na churrasqueira, pão brioche e molhos da casa. Do jeito que tem que ser.</p>
+    </div>
+    <div class="hero-mid r" id="hmid2">
+      <h2 class="disp">O Garagito <span class="script">te espera!</span></h2>
+      <p>Ambiente família, mesa pra turma toda e aquele lanche que derrete corações.</p>
+    </div>
+    <div class="hero-end" id="hend">
+      <h1 class="disp">Garage Burger <span class="script">Apucarana</span></h1>
+      <div class="ctas">
+        <a class="btn btn-y" href="#cardapio">Ver cardápio e pedir</a>
+        <a class="btn btn-wa" href="https://wa.me/5543996008752?text=Ol%C3%A1%2C%20Garage%20Burger!%20Vim%20pelo%20site%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.4-1.5-5.2C2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8M20.4 3.6C18.2 1.3 15.2 0 12 0 5.5 0 .2 5.3.2 11.8c0 2.1.5 4.1 1.6 5.9L.1 24l6.4-1.7c1.7.9 3.6 1.4 5.6 1.4 6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.3"/></svg>Pedir no WhatsApp</a>
+      </div>
+      <div class="meta"><span><b>★ 4,9</b> no Google</span><span>Entrega e retirada</span><span>Ter a Dom • 11h–14h e 18h–23h</span></div>
+    </div>
+    <div class="progress" id="prog"></div>
+  </div>
+</section>
+
+<div class="marq" aria-hidden="true"><div class="t">
+  <span>160g na churrasqueira</span><span>Pão brioche</span><span>Maionese da casa</span><span>Costela desfiada</span><span>Milk-shakes</span><span>Entrega e retirada</span><span>Apucarana-PR</span>
+  <span>160g na churrasqueira</span><span>Pão brioche</span><span>Maionese da casa</span><span>Costela desfiada</span><span>Milk-shakes</span><span>Entrega e retirada</span><span>Apucarana-PR</span>
+</div></div>
+
+<!-- ===== SOBRE ===== -->
+<section class="about sec" id="sobre">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <span class="kicker">A casa</span>
+      <h2 class="disp h2">Doce, salgado <span class="script">e provocante</span></h2>
+      <p class="lead">A Garage Burger nasceu pra quem leva hambúrguer a sério. Blend artesanal de 160g grelhado na churrasqueira, queijo derretendo, bacon crocante e molhos feitos na casa — servido num ambiente aconchegante, com cara de garagem e clima de família.</p>
+      <div class="feats">
+        <div class="feat"><i>🔥</i><h4>Na churrasqueira</h4><p>Burger de 160g com aquele sabor de brasa que você sente na primeira mordida.</p></div>
+        <div class="feat"><i>🧀</i><h4>Combinações autorais</h4><p>Do clássico Salada ao 4x4 com quatro queijos e o Melt empanado.</p></div>
+        <div class="feat"><i>👨‍👩‍👧</i><h4>Pra família toda</h4><p>Espaço amplo, atendimento atencioso e o mascote Garagito pra criançada.</p></div>
+      </div>
+      <div class="ctas">
+        <a class="btn btn-y" href="#cardapio">Ver cardápio</a>
+        <a class="btn btn-o" href="#tour">Conhecer o espaço</a>
+      </div>
+    </div>
+    <div class="posters reveal">
+      <div class="stamp"><b>4,9</b>★★★★★<small>NO GOOGLE</small></div>
+      <img class="p1" src="poster-doce.jpg" alt="Burger com bacon e queijo derretido da Garage Burger" loading="lazy">
+      <img class="p2" src="poster-coracoes.jpg" alt="O lanche que derrete corações - Garage Burger" loading="lazy">
+    </div>
+  </div>
+</section>
+<div class="check"></div>
+
+<!-- ===== CARDÁPIO ===== -->
+<section class="menu sec" id="cardapio">
+  <div class="wrap">
+    <div class="menu-top reveal">
+      <div>
+        <span class="kicker">Cardápio</span>
+        <h2 class="disp h2">Escolha, <span class="script">monte e peça</span></h2>
+        <p class="lead">Adicione os itens e envie o pedido pronto pelo WhatsApp — ou, se preferir, finalize direto no nosso cardápio online.</p>
+      </div>
+      <div class="order-opts">
+        <a class="btn btn-y" href="https://garageburgerapucarana.saipos.com/home" target="_blank" rel="noopener">Pedir no cardápio online ↗</a>
+        <a class="btn btn-wa" href="https://wa.me/5543996008752?text=Ol%C3%A1%2C%20Garage%20Burger!%20Vim%20pelo%20site%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="tabs" id="tabs"></div>
+    <div id="menuRoot"></div>
+    <p class="note">Preços conforme o cardápio online da Garage Burger e sujeitos a alteração. Itens marcados com “a partir de” têm opções de tamanho/quantidade — a gente confirma com você no WhatsApp. Taxa de entrega calculada no fechamento do pedido.</p>
+  </div>
+</section>
+<div class="check sm"></div>
+
+<!-- ===== VÍDEO ===== -->
+<section class="vid sec" id="video">
+  <div class="glow"></div>
+  <div class="wrap vid-grid">
+    <div class="reveal">
+      <span class="kicker">Direto da churrasqueira</span>
+      <h2 class="disp h2">Fogo alto, <span class="script">sabor de verdade</span></h2>
+      <p class="lead">Cada burger passa pela brasa, ganha queijo derretido na hora e chega montado do jeito que você vê aqui. Sem atalho.</p>
+      <div class="ticks">
+        <div><b>1</b><p><strong>Blend artesanal de 160g</strong>Moldado e grelhado na churrasqueira, no ponto certo.</p></div>
+        <div><b>2</b><p><strong>Queijos que derretem</strong>Prato, cheddar, provolone, mussarela e gouda empanado.</p></div>
+        <div><b>3</b><p><strong>Na mesa ou em casa</strong>Peça para retirar ou receba no conforto do seu sofá.</p></div>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:30px">
+        <a class="btn btn-y" href="#cardapio">Quero o meu</a>
+        <a class="btn btn-o" href="https://www.instagram.com/garageburgerapucarana/" target="_blank" rel="noopener">Ver mais no Instagram</a>
+      </div>
+    </div>
+    <div class="phone reveal">
+      <video id="vid2" src="garage-video.mp4" poster="garage-video-poster.jpg" muted loop playsinline preload="metadata"></video>
+      <button class="snd" id="snd" aria-label="Ativar som">🔇</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALERIA ===== -->
+<section class="gal sec" id="galeria">
+  <div class="wrap">
+    <div class="ig reveal">
+      <div>
+        <span class="kicker">Galeria</span>
+        <h2 class="disp h2">De dar água <span class="script">na boca</span></h2>
+      </div>
+      <a class="btn btn-o" href="https://www.instagram.com/garageburgerapucarana/" target="_blank" rel="noopener">@garageburgerapucarana</a>
+    </div>
+    <div class="masonry reveal" id="gal">
+      <a href="g1.jpg"><img src="g1.jpg" alt="Burger com bacon e queijo" loading="lazy"></a>
+      <a href="g3.jpg"><img src="g3.jpg" alt="Milk-shakes Garage Burger" loading="lazy"></a>
+      <a href="g5.jpg"><img src="g5.jpg" alt="Batata com cheddar e costela" loading="lazy"></a>
+      <a href="g2.jpg"><img src="g2.jpg" alt="Burger com cebola roxa e queijo" loading="lazy"></a>
+      <a href="g10.jpg"><img src="g10.jpg" alt="Burger cortado ao meio" loading="lazy"></a>
+      <a href="g4.jpg"><img src="g4.jpg" alt="Burger duplo cheddar com batatas" loading="lazy"></a>
+      <a href="g6.jpg"><img src="g6.jpg" alt="Almofadinha de queijo gouda" loading="lazy"></a>
+      <a href="g8.jpg"><img src="g8.jpg" alt="Drink defumado Garage" loading="lazy"></a>
+      <a href="g7.jpg"><img src="g7.jpg" alt="Dois burgers empilhados" loading="lazy"></a>
+      <a href="g9.jpg"><img src="g9.jpg" alt="Burgers artesanais nas mãos" loading="lazy"></a>
+      <a href="banner.jpg"><img src="banner.jpg" alt="Pratos da Garage Burger" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAMÍLIA ===== -->
+<section class="fam sec">
+  <div class="wrap fam-grid">
+    <div class="reveal">
+      <span class="kicker">Pra família</span>
+      <h2 class="disp h2">Conheça o <span class="script">Garagito</span></h2>
+      <p class="lead">Nosso mascote capivara é a alegria da criançada. Fique de olho no Instagram para o Combo Garagito e as surpresas que aparecem por aqui — a Garage é lugar de reunir a turma, a família e os amigos.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
+        <a class="btn" style="background:var(--k);color:var(--y)" href="https://wa.me/5543996008752?text=Ol%C3%A1!%20Gostaria%20de%20reservar%20uma%20mesa%20na%20Garage%20Burger." target="_blank" rel="noopener">Reservar mesa no WhatsApp</a>
+      </div>
+    </div>
+    <div class="imgs reveal">
+      <img src="garagito.jpg" alt="Combo Garagito" loading="lazy">
+      <img src="fachada.jpg" alt="Mascote Garagito na fachada da Garage Burger" loading="lazy">
+    </div>
+  </div>
+</section>
+<div class="check"></div>
+
+<!-- ===== TOUR 360 ===== -->
+<section class="tour sec" id="tour">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="kicker">Tour virtual 360°</span>
+      <h2 class="disp h2">Dê uma volta <span class="script">por aqui</span></h2>
+      <p class="lead">Arraste para olhar em todas as direções. Em breve, o tour completo por dentro da Garage Burger.</p>
+    </div>
+    <div class="pano-wrap reveal">
+      <span class="badge">● Prévia — tour completo em breve</span>
+      <div id="pano"></div>
+    </div>
+    <div class="tour-note">
+      <span>Tour virtual 360° por <a href="https://infinity-360.github.io/360view/" target="_blank" rel="noopener" style="color:var(--y);font-weight:600">Infinity View 360</a></span>
+      <a class="btn btn-o btn-sm" href="https://www.google.com/maps?cid=10579655888230539246" target="_blank" rel="noopener">Abrir no Google Maps</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTATO ===== -->
+<section class="contact sec" id="contato">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="kicker" style="color:#b88a00">Visite a gente</span>
+      <h2 class="disp h2">Horários <span class="script" style="color:#d9a400">& endereço</span></h2>
+    </div>
+    <div class="ct-grid">
+      <div class="card reveal">
+        <span class="status" id="status"><i></i><span>Verificando horário…</span></span>
+        <div class="hrs" id="hrs"></div>
+        <div class="info">
+          <a href="https://www.google.com/maps?cid=10579655888230539246" target="_blank" rel="noopener"><span class="ic">📍</span><span><b>Endereço</b>R. Profa. Talita Bresolin, 1067 — Jardim São Pedro, Apucarana-PR, 86802-390</span></a>
+          <a href="https://wa.me/5543996008752" target="_blank" rel="noopener"><span class="ic">💬</span><span><b>WhatsApp</b>(43) 99600-8752</span></a>
+          <div><span class="ic">🛵</span><span><b>Atendimento</b>Salão, retirada e entrega</span></div>
+        </div>
+        <div class="ctas">
+          <a class="btn btn-y" href="https://www.google.com/maps/dir/?api=1&destination=GarageBurger%2C%20R.%20Profa.%20Talita%20Bresolin%2C%201067%2C%20Apucarana%20-%20PR" target="_blank" rel="noopener">Como chegar</a>
+          <a class="btn btn-wa" href="https://wa.me/5543996008752" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        </div>
+      </div>
+      <div class="map reveal">
+        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Garage Burger Apucarana" src="https://www.google.com/maps?q=-23.5654553,-51.4586346&z=16&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img src="logo.png" alt="Garage Burger">
+  <div>Garage Burger Apucarana • R. Profa. Talita Bresolin, 1067 • Apucarana-PR</div>
+  <div class="soc">
+    <a href="https://www.instagram.com/garageburgerapucarana/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://wa.me/5543996008752" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://garageburgerapucarana.saipos.com/home" target="_blank" rel="noopener">Cardápio online</a>
+  </div>
+  <div>© <span id="yr"></span> Garage Burger. Todos os direitos reservados.</div>
+  <div class="cred">Site e tour virtual 360° por <a href="https://infinity-360.github.io/360view/" target="_blank" rel="noopener">Infinity View 360</a></div>
+</footer>
+
+<!-- WhatsApp & carrinho -->
+<a class="wa-fab" href="https://wa.me/5543996008752?text=Ol%C3%A1%2C%20Garage%20Burger!%20Vim%20pelo%20site." target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.4-1.5-5.2C2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8M20.4 3.6C18.2 1.3 15.2 0 12 0 5.5 0 .2 5.3.2 11.8c0 2.1.5 4.1 1.6 5.9L.1 24l6.4-1.7c1.7.9 3.6 1.4 5.6 1.4 6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.3"/></svg></a>
+<button class="cart-fab" id="cartFab">🛒 Ver pedido <span class="n" id="cartN">0</span></button>
+<div class="drawer-bg" id="dbg"></div>
+<aside class="drawer" aria-label="Seu pedido">
+  <div class="dh"><h3>Seu pedido</h3><button id="dclose" aria-label="Fechar">×</button></div>
+  <div class="db">
+    <div id="clist"></div>
+    <div class="form" id="cform">
+      <label>Seu nome</label><input id="fNome" placeholder="Como podemos te chamar?" autocomplete="name">
+      <label>Como quer receber?</label>
+      <div class="seg" id="fTipo"><button class="on" data-v="Entrega">🛵 Entrega</button><button data-v="Retirada">🏪 Retirada</button></div>
+      <div id="endBox" style="display:grid;gap:10px"><label>Endereço de entrega</label><input id="fEnd" placeholder="Rua, número, bairro e referência" autocomplete="street-address"></div>
+      <label>Pagamento</label>
+      <select id="fPag"><option>Pix</option><option>Cartão de crédito</option><option>Cartão de débito</option><option>Dinheiro</option></select>
+      <label>Observações</label><textarea id="fObs" placeholder="Ex.: sem cebola, ponto da carne, troco para…"></textarea>
+    </div>
+  </div>
+  <div class="df">
+    <div class="tot"><span>Total dos itens</span><span id="ctot">R$ 0,00</span></div>
+    <small>Taxa de entrega e itens “a partir de” confirmados pela loja no WhatsApp.</small>
+    <button class="btn btn-wa" id="sendWa">Enviar pedido pelo WhatsApp</button>
+    <a class="alt" href="https://garageburgerapucarana.saipos.com/home" target="_blank" rel="noopener">Prefere finalizar no cardápio online? Clique aqui</a>
+  </div>
+</aside>
+<div class="lb" id="lb"><img alt=""></div>
+<div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+<script>
+/* ================= HERO SCROLL (sprite sheets) ================= */
+(function(){
+  const FRAMES=96, PER=12, COLS=4, FW=450, FH=800;
+  const sheets=[]; let loaded=0;
+  const fc=document.getElementById('fc'), fx=fc.getContext('2d');
+  const bc=document.getElementById('bgc'), bx=bc.getContext('2d');
+  const hero=document.getElementById('hero');
+  const logo=document.getElementById('hlogo'), intro=document.getElementById('hintro');
+  const m1=document.getElementById('hmid1'), m2=document.getElementById('hmid2'), end=document.getElementById('hend');
+  const prog=document.getElementById('prog'), hdr=document.getElementById('hdr');
+  const poster=new Image(); poster.src='hero-poster.jpg';
+  let cur=-1, target=0, dpr=1, W=0, H=0;
+
+  function load(i){ const im=new Image(); im.decoding='async'; im.onload=()=>{sheets[i]=im;loaded++;cur=-1;}; im.src='hero'+i+'.jpg'; }
+  load(0); // primeiro já
+  window.addEventListener('load',()=>{ for(let i=1;i<FRAMES/PER;i++) load(i); });
+  setTimeout(()=>{ for(let i=1;i<FRAMES/PER;i++) if(!sheets[i]) load(i); },2500);
+
+  function size(){
+    dpr=Math.min(window.devicePixelRatio||1,2);
+    W=fc.clientWidth; H=fc.clientHeight;
+    fc.width=Math.round(W*dpr); fc.height=Math.round(H*dpr);
+    cur=-1;
+  }
+  function src(f){
+    // procura o frame carregado mais próximo
+    let s=Math.floor(f/PER);
+    if(sheets[s]) return [sheets[s], f%PER];
+    for(let d=1; d<8; d++){
+      if(sheets[s-d]) return [sheets[s-d], PER-1];
+      if(sheets[s+d]) return [sheets[s+d], 0];
+    }
+    return null;
+  }
+  function draw(f){
+    const r=src(f); let img, sx=0, sy=0, sw, sh;
+    if(r){ img=r[0]; const k=r[1]; sx=(k%COLS)*FW; sy=Math.floor(k/COLS)*FH; sw=FW; sh=FH; }
+    else if(poster.complete && poster.naturalWidth){ img=poster; sw=poster.naturalWidth; sh=poster.naturalHeight; }
+    else return;
+    const cw=fc.width, ch=fc.height, ar=sw/sh, va=cw/ch;
+    fx.clearRect(0,0,cw,ch);
+    let dw, dh;
+    if(va < 0.82){ // retrato (mobile): cobre a tela toda
+      if(va>ar){ dw=cw; dh=cw/ar; } else { dh=ch; dw=ch*ar; }
+    } else { // paisagem (desktop): vídeo inteiro no centro + fundo desfocado
+      dh=ch; dw=ch*ar;
+    }
+    fx.drawImage(img,sx,sy,sw,sh,(cw-dw)/2,(ch-dh)/2,dw,dh);
+    if(va>=0.82){
+      // bordas suaves do painel central
+      const g1=fx.createLinearGradient((cw-dw)/2,0,(cw-dw)/2+60*dpr,0);
+      g1.addColorStop(0,'rgba(11,11,11,1)'); g1.addColorStop(1,'rgba(11,11,11,0)');
+      fx.fillStyle=g1; fx.fillRect((cw-dw)/2,0,60*dpr,ch);
+      const x2=(cw+dw)/2; const g2=fx.createLinearGradient(x2-60*dpr,0,x2,0);
+      g2.addColorStop(0,'rgba(11,11,11,0)'); g2.addColorStop(1,'rgba(11,11,11,1)');
+      fx.fillStyle=g2; fx.fillRect(x2-60*dpr,0,60*dpr,ch);
+      bx.drawImage(img,sx,sy,sw,sh,0,0,bc.width,bc.height);
+    }
+  }
+  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+  const seg=(p,a,b)=>clamp((p-a)/(b-a),0,1);
+  function progress(){
+    const r=hero.getBoundingClientRect();
+    const total=hero.offsetHeight-window.innerHeight;
+    return clamp(-r.top/total,0,1);
+  }
+  let smooth=0;
+  function tick(){
+    const p=progress();
+    smooth+= (p-smooth)*0.18; if(Math.abs(p-smooth)<0.0005) smooth=p;
+    const f=Math.min(FRAMES-1,Math.round(smooth*(FRAMES-1)));
+    if(f!==cur){ draw(f); cur=f; }
+    // logo sobreposta: grande no início, sobe e some
+    const lp=seg(p,0.02,0.22);
+    const sc=1-lp*0.55, ty=-lp*38;
+    logo.style.transform=`translate(-50%,calc(-50% + ${ty}vh)) scale(${sc})`;
+    logo.style.opacity=1-seg(p,0.16,0.26);
+    intro.style.opacity=1-seg(p,0,0.08);
+    // textos intermediários
+    const a1=seg(p,0.26,0.33)*(1-seg(p,0.46,0.53));
+    m1.style.opacity=a1; m1.style.transform=(innerWidth>820?'translateY(-50%) ':'')+`translateY(${(1-a1)*24}px)`;
+    const a2=seg(p,0.55,0.62)*(1-seg(p,0.72,0.78));
+    m2.style.opacity=a2; m2.style.transform=(innerWidth>820?'translateY(-50%) ':'')+`translateY(${(1-a2)*24}px)`;
+    const a3=seg(p,0.8,0.9);
+    end.style.opacity=a3; end.style.transform=`translateY(${(1-a3)*30}px)`;
+    end.style.pointerEvents=a3>.5?'auto':'none';
+    prog.style.width=(p*100)+'%';
+    const past=p>0.2 || window.scrollY>hero.offsetHeight-80;
+    hdr.classList.toggle('show-logo',past);
+    hdr.classList.toggle('solid',window.scrollY>hero.offsetHeight-90);
+    requestAnimationFrame(tick);
+  }
+  window.addEventListener('resize',size);
+  size(); poster.onload=()=>{cur=-1}; requestAnimationFrame(tick);
+})();
+
+/* ================= CARDÁPIO ================= */
+const IMG='https://static.saipos.com/saipos-estatico/img-items/86895/store_item/';
+const MENU=[
+ {id:'burgers',nome:'Burgers',itens:[
+  ['Salada','Pão, Hambúrguer 160g, Queijo Prato, Maionese da Casa, Tomate e Alface Americano.',29,'fdce36a94010f28d277f46e62da8e6c2.jpeg'],
+  ['Bacon','Pão, Hambúrguer 160g, Queijo Prato, Maionese da Casa, Tomate, Alface Americano e Bacon Crocante.',31,'ece14e1fba67612abfe8027deb001abf.jpeg'],
+  ['Cheese Burguer','Pão, Hambúrguer 160g, Queijo Prato e Maionese da Casa.',27,'9c6085820088bf9cf28fb966a1e11d80.jpeg'],
+  ['Duplo','Pão, 2 hambúrgueres 160g grelhados na churrasqueira, Tomate, Queijo Prato, Bacon Crocante, Maionese da Casa e Cebola Caramelizada.',40,'6678741bea340cc31a2bc2763919065a.jpeg'],
+  ['Duplo Cheddar','Pão, 2 hambúrgueres 160g cada, Queijo Cheddar, Alface Americano, Tomate, Picles, Crispy de Bacon e Maionese da Casa.',40,'d9b274f9001f4f48ce7fdbb9efcd8a49.jpeg'],
+  ['Melt','Pão, Hambúrguer 160g, Queijo Mussarela 100g Empanada, Maionese Verde Especial, Alface e Tomate.',38,'c389a5f98a103e21eaed19ecd6155512.jpeg'],
+  ['Burguer do Chef','Pão, Hambúrguer 160g, Queijo Provolone, Maionese da Casa, Tomate, Bacon e Geleia de Abacaxi com Pimenta.',33,'5783c6a0db2bd4032fe6d21e2959785a.jpeg'],
+  ['Costela 2.0','Pão, Hambúrguer 160g, Queijo Prato, Tomate, Cebola Roxa, Costela Desfiada e Molho Barbecue.',33,'e77a0266a3b481d4ad91af4d71a34336.jpeg'],
+  ['Cream Cheese 2.0','Pão, Hambúrguer 160g, Queijo Cheddar, Maionese da Casa, Crispy de Bacon e Cream Cheese.',33,'2cff8d4e76f746ad45649b3a5539d1d0.jpeg'],
+  ['Chicken Burger','Pão, Hambúrguer de Frango 150g Empanado, Cream Cheese, Maionese Verde Especial, Alface Americano e Tomate.',29,'4dd8b0d46bd3d46debf3c0f836f98370.jpeg'],
+  ['4x4','Pão brioche, tomate, cebola roxa e quatro camadas de queijo: prato, provolone, cheddar e três travesseiros de queijo gouda empanado, com burger artesanal de 160g.',37,'d4f814c8a6de6a73b695163362fe9326.jpeg'],
+  ['Onion Burger','Pão, Hambúrguer 160g, Queijo Cheddar, Barbecue, Picles e Onion Rings.',33,null]
+ ]},
+ {id:'porcoes',nome:'Porções',itens:[
+  ['Almofadinha de Queijo Gouda','Massa leve e recheio cremoso de queijo gouda. 6 unidades.',22,'54a3d3c493333d87d690285daf4a585c.png',null,true],
+  ['Batata Crinkle','Batata frita crinkle, 150g.',15,'141ded77e93e1af6c32cc454d57971b3.jpeg'],
+  ['Batata com Cheddar e Costela','Batatas crocantes cobertas com creme de cheddar e pedaços suculentos de costela desfiada. Aprox. 500g.',34,'e5becec10e7cb543ad592cbdf1fb7663.jpeg'],
+  ['Coxinha de Frango com Catupiry (sem massa)','Crocante por fora, cremosa por dentro! Seis mini coxinhas sem massa, recheadas com frango desfiado temperado e Catupiry.',31,'87893b84c4a3b6f51a7d5ced4508bf17.png',null,true],
+  ['Mini Chicken','10 unidades, acompanha maionese verde caseira.',22,'f0a5b236f47f885bbf93006491d00128.jpeg'],
+  ['Onion Rings','10 unidades de anéis de cebola.',15,'39670ec1b29315a186747b3ece20388a.jpeg']
+ ]},
+ {id:'shakes',nome:'Milk-shakes',itens:[
+  ['Milkshake Nutella com Ovomaltine','',23,'d1d0a1ba8ac7962c9655f56b90d29a34.jpeg'],
+  ['Milkshake Oreo com Ninho','',22,'d43eb599310541c1fac3503185bfbe27.jpeg']
+ ]},
+ {id:'bebidas',nome:'Bebidas',drink:true,itens:[
+  ['Água com gás','',5,'3a3c3d21c2875be8908fd1a5befc5b15.jpeg'],
+  ['Água sem gás','',5,'8ff4bb1b9f62e1c0b97a55ccd566a6f8.jpeg'],
+  ['Kapo Morango','',4,'9e057a8ba6df134a8ef64090ddca3f87.png'],
+  ['Kapo Uva','',4,'d02d51e88dae33f0d4a2dcf38013bfe6.jpeg'],
+  ['Coca-Cola 350ml','',8,'f5867f7b7dca0788d640d2f717b004d7.jpeg'],
+  ['Coca-Cola Zero 350ml','',8,'c04fb7d3ef1e26f05c3adddae73aca25.jpeg'],
+  ['Coca-Cola 600ml','',11,'e47f8abfc95413297d46efd74c9e42be.jpeg'],
+  ['Coca-Cola Zero 600ml','',11,null],
+  ['Coca-Cola 1 Litro','',13,'6a03071e7fe165c1e5f44d58df723b5c.jpeg'],
+  ['Coca-Cola Zero 1 Litro','',13,'193c7dc1b46fd9df98bee33d93e6f642.jpeg'],
+  ['Guaraná Antarctica 350ml','',8,'e94ee402502f54dafae4901d9c50c302.jpeg'],
+  ['Guaraná Antarctica Zero 350ml','',8,'9caf910c400941916260a5fb96d9689d.jpeg'],
+  ['Guaraná 600ml','',11,'6d3c1fe6df81c57ed87edaa0ed305c8d.jpeg'],
+  ['Guaraná Zero 600ml','',11,'19b3ffd5a2a3c6ff57d49cdcfd4924a6.jpeg'],
+  ['Fanta Laranja 350ml','',8,'bdcf51424b44048ebb88bace093ae248.jpeg'],
+  ['Sprite 350ml','',8,'811712f37c67b1bc38bab596cbe071d4.jpeg'],
+  ['Sprite Zero 350ml','',8,'20602c51c21c174d7a29e8cd3b446a6d.jpeg'],
+  ['Schweppes Citrus (lata)','',8,'514f1d8f01d84c53d8242bc411cd903e.jpeg'],
+  ['Schweppes Citrus 250ml','',7,null],
+  ['Schweppes Tônica 250ml','',7,null],
+  ['Água Tônica Zero 350ml','',8,null],
+  ['Summer Laranja 300ml','',9,null],
+  ['Summer Maracujá 300ml','',9,null],
+  ['Summer Laranja 900ml','',17,null],
+  ['Summer Maracujá 900ml','',17,null]
+ ]},
+ {id:'molhos',nome:'Molhos',mini:true,itens:[
+  ['Barbecue','Molho extra.',2,null],
+  ['Geleia de Abacaxi com Pimenta','Molho extra.',3,null],
+  ['Maionese Verde','Molho extra.',2,null]
+ ]}
+];
+const brl=v=>'R$ '+v.toFixed(2).replace('.',',');
+const cart={};
+const root=document.getElementById('menuRoot'), tabs=document.getElementById('tabs');
+MENU.forEach((c,ci)=>{
+  const t=document.createElement('button'); t.className='tab'+(ci?'':' on'); t.textContent=c.nome; t.dataset.t=c.id;
+  t.onclick=()=>{ const el=document.getElementById('cat-'+c.id); window.scrollTo({top:el.getBoundingClientRect().top+scrollY-140,behavior:'smooth'}); };
+  tabs.appendChild(t);
+  const sec=document.createElement('div'); sec.className='cat'; sec.id='cat-'+c.id;
+  sec.innerHTML=`<h3 class="disp">${c.nome}</h3>`;
+  const g=document.createElement('div');
+  const noImg=c.itens.filter(i=>!i[3]&&!i[4]);
+  g.className='grid'+(c.mini?' mini-list cols4':'')+(c.drink?' cols4':'');
+  c.itens.forEach((it,ii)=>{
+    const [n,d,p,img,local,from]=it; const key=c.id+'-'+ii;
+    const el=document.createElement('div'); el.className='item reveal'+(c.drink?' drink':'');
+    const src=img?IMG+img:(local||'');
+    el.innerHTML=`${c.mini?'':`<div class="ph">${src?`<img src="${src}" alt="${n}" loading="lazy" onerror="this.remove()">`:''}</div>`}
+      <div class="bd"><h4>${n}</h4>${d?`<p>${d}</p>`:'<p></p>'}
+      <div class="ft"><div class="price">${from?'<small>a partir de</small>':''}${brl(p)}</div><div class="ctl" data-k="${key}"></div></div></div>`;
+    g.appendChild(el);
+    cart[key]={n,p,from,q:0,cat:c.nome};
+  });
+  sec.appendChild(g); root.appendChild(sec);
+});
+function renderCtl(k){
+  document.querySelectorAll(`.ctl[data-k="${k}"]`).forEach(el=>{
+    const q=cart[k].q;
+    el.innerHTML=q?`<div class="qty"><button data-a="-" aria-label="Remover">−</button><span>${q}</span><button data-a="+" aria-label="Adicionar">+</button></div>`
+                  :`<button class="add" data-a="+">+ Adicionar</button>`;
+  });
+}
+Object.keys(cart).forEach(renderCtl);
+function change(k,d){
+  cart[k].q=Math.max(0,cart[k].q+d); renderCtl(k); renderCart();
+  if(d>0) toast(cart[k].n+' adicionado ✓');
+}
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-a]'); if(!b) return;
+  const ctl=b.closest('[data-k]'); if(!ctl) return;
+  change(ctl.dataset.k,b.dataset.a==='+'?1:-1);
+});
+function renderCart(){
+  const items=Object.entries(cart).filter(([k,v])=>v.q>0);
+  const n=items.reduce((s,[k,v])=>s+v.q,0), tot=items.reduce((s,[k,v])=>s+v.q*v.p,0);
+  document.getElementById('cartN').textContent=n;
+  document.getElementById('cartFab').classList.toggle('show',n>0);
+  document.getElementById('ctot').textContent=brl(tot);
+  const cl=document.getElementById('clist');
+  cl.innerHTML=items.length?items.map(([k,v])=>`<div class="cl"><div class="nm">${v.n}<small>${v.from?'a partir de ':''}${brl(v.p)} cada</small></div><div class="ctl" data-k="${k}"></div></div>`).join('')
+    :'<div class="empty">Seu pedido está vazio.<br>Adicione itens do cardápio 🍔</div>';
+  items.forEach(([k])=>renderCtl(k));
+}
+renderCart();
+const body=document.body;
+document.getElementById('cartFab').onclick=()=>body.classList.add('cart-open');
+document.getElementById('dclose').onclick=document.getElementById('dbg').onclick=()=>body.classList.remove('cart-open');
+let tipo='Entrega';
+document.querySelectorAll('#fTipo button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#fTipo button').forEach(x=>x.classList.remove('on')); b.classList.add('on'); tipo=b.dataset.v;
+  document.getElementById('endBox').style.display=tipo==='Entrega'?'grid':'none';
+});
+document.getElementById('sendWa').onclick=()=>{
+  const items=Object.values(cart).filter(v=>v.q>0);
+  if(!items.length){toast('Adicione itens ao pedido');return;}
+  const nome=document.getElementById('fNome').value.trim(), end=document.getElementById('fEnd').value.trim();
+  if(tipo==='Entrega'&&!end){toast('Informe o endereço de entrega');document.getElementById('fEnd').focus();return;}
+  let m='Olá, Garage Burger! 🍔 Quero fazer um pedido pelo site:\n\n';
+  items.forEach(v=>{m+=`• ${v.q}x ${v.n} — ${v.from?'a partir de ':''}${brl(v.q*v.p)}\n`;});
+  const tot=items.reduce((s,v)=>s+v.q*v.p,0);
+  m+=`\n*Total dos itens:* ${brl(tot)}${tipo==='Entrega'?' + taxa de entrega':''}\n`;
+  if(nome) m+=`\n*Nome:* ${nome}`;
+  m+=`\n*Recebimento:* ${tipo}`;
+  if(tipo==='Entrega') m+=`\n*Endereço:* ${end}`;
+  m+=`\n*Pagamento:* ${document.getElementById('fPag').value}`;
+  const obs=document.getElementById('fObs').value.trim(); if(obs) m+=`\n*Obs.:* ${obs}`;
+  window.open('https://wa.me/5543996008752?text='+encodeURIComponent(m),'_blank');
+};
+let tt; function toast(s){const t=document.getElementById('toast');t.textContent=s;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),1600);}
+
+/* abas ativas conforme rolagem */
+const catEls=MENU.map(c=>document.getElementById('cat-'+c.id));
+addEventListener('scroll',()=>{
+  let on=0; catEls.forEach((el,i)=>{ if(el.getBoundingClientRect().top<200) on=i; });
+  document.querySelectorAll('.tab').forEach((t,i)=>{ const was=t.classList.contains('on'); t.classList.toggle('on',i===on); if(i===on&&!was) t.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'}); });
+},{passive:true});
+
+/* ================= reveal ================= */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ================= vídeo 2 ================= */
+const v2=document.getElementById('vid2'), snd=document.getElementById('snd');
+new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ v2.play().catch(()=>{}); } else v2.pause(); }),{threshold:.35}).observe(v2);
+snd.onclick=()=>{ v2.muted=!v2.muted; snd.textContent=v2.muted?'🔇':'🔊'; if(!v2.muted) v2.play(); };
+
+/* ================= galeria lightbox ================= */
+const lb=document.getElementById('lb');
+document.getElementById('gal').addEventListener('click',e=>{const a=e.target.closest('a');if(!a)return;e.preventDefault();lb.querySelector('img').src=a.href;lb.classList.add('open');});
+lb.onclick=()=>lb.classList.remove('open');
+
+/* ================= menu mobile ================= */
+const mnav=document.getElementById('mnav');
+document.getElementById('mbtn').onclick=()=>mnav.classList.add('open');
+document.getElementById('mclose').onclick=()=>mnav.classList.remove('open');
+mnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mnav.classList.remove('open')));
+
+/* ================= tour 360 ================= */
+let panoStarted=false;
+new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting&&!panoStarted&&window.pannellum){
+    panoStarted=true;
+    pannellum.viewer('pano',{type:'equirectangular',panorama:'tour360.jpg',autoLoad:true,autoRotate:-2,showZoomCtrl:true,hfov:105,pitch:-2,yaw:20,compass:false,mouseZoom:false});
+  }
+}),{rootMargin:'200px'}).observe(document.getElementById('pano'));
+
+/* ================= horários ================= */
+(function(){
+  const dias=['Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado'];
+  const H={0:1,2:1,3:1,4:1,5:1,6:1};
+  const now=new Date(new Date().toLocaleString('en-US',{timeZone:'America/Sao_Paulo'}));
+  const d=now.getDay(), mins=now.getHours()*60+now.getMinutes();
+  const order=[2,3,4,5,6,0,1];
+  document.getElementById('hrs').innerHTML=order.map(i=>`<div class="${i===d?'today':''}"><span>${dias[i]}</span><span class="${H[i]?'':'off'}">${H[i]?'11h–14h • 18h–23h':'Fechado'}</span></div>`).join('');
+  const open=H[d]&&((mins>=660&&mins<840)||(mins>=1080&&mins<1380));
+  const st=document.getElementById('status');
+  st.classList.toggle('open',!!open);
+  let msg;
+  if(open) msg='Aberto agora';
+  else if(H[d]&&mins<660) msg='Fechado • abre hoje às 11h';
+  else if(H[d]&&mins>=840&&mins<1080) msg='Fechado • reabre hoje às 18h';
+  else { let k=1; while(!H[(d+k)%7]) k++; msg='Fechado • abre '+(k===1?'amanhã':dias[(d+k)%7].toLowerCase())+' às 11h'; }
+  st.querySelector('span').textContent=msg;
+  document.getElementById('yr').textContent=now.getFullYear();
+})();
+</script>
+</body>
+</html>
